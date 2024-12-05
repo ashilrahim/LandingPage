@@ -176,7 +176,7 @@ const About = () => {
             </p>
 
             {/* Animated Statistics */}
-            <div className="grid grid-cols-3 gap-4 py-8 border-t border-b border-gray-200">
+            <div className="grid grid-cols-3 gap-4 py-8 border-t border-b border-gray-200 text-center">
               {stats.map((stat, index) => (
                 <AnimatedNumber
                   key={index}

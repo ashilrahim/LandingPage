@@ -12,21 +12,21 @@ const Hero = () => {
     root: {
       base: "relative h-full w-full",
       leftControl: "hidden", // This hides the left control
-      rightControl: "hidden" // This hides the default right control
-    }
+      rightControl: "hidden", // This hides the default right control
+    },
   };
 
   const CustomControls = ({ Slide }) => (
     <div className="absolute bottom-4 right-4 flex gap-2 z-20">
-      <button 
+      <button
         className="bg-black/50 p-3 rounded-full hover:bg-black transition-colors group"
-        onClick={() => Slide('prev')}
+        onClick={() => Slide("prev")}
       >
         <MdKeyboardArrowLeft className="text-white text-xl" />
       </button>
-      <button 
+      <button
         className="bg-black/50 p-3 rounded-full hover:bg-black transition-colors group"
-        onClick={() => Slide('next')}
+        onClick={() => Slide("next")}
       >
         <MdKeyboardArrowRight className="text-white text-xl" />
       </button>
@@ -45,10 +45,18 @@ const Hero = () => {
           dui tellus commodo convallis. Auctor eget orci pharetra non. Integer
           lorem in scelerisque tortor dui tempor
         </p>
-        <button className="group bg-black text-white px-6 py-3 flex items-center w-fit hover:bg-gray-800 transition-colors gap-4">
-          CONNECT US
-          <GoArrowRight className="hover: transition-transform duration-500 ease-in-out group-hover:rotate-45" />
-        </button>
+        {/* button */}
+        <button className="relative group bg-gradient-to-r from-[#233142] to-[#344256] text-white px-6 py-3 flex items-center w-fit rounded-full overflow-hidden transition-all duration-300 hover:bg-gradient-to-r hover:from-[#344256] hover:to-[#455470]">
+      {/* Hidden hover state with arrow */}
+      <span className="absolute inset-0 flex items-center justify-center w-full h-full bg-[#1c2535] text-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out">
+        <GoArrowRight className="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-45 ease-in-out" />
+      </span>
+      
+      {/* Original text */}
+      <span className="relative flex items-center text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-full ease-in-out">
+        CONNECT US
+      </span>
+    </button>
       </div>
 
       {/* Image Carousel */}
@@ -58,7 +66,7 @@ const Hero = () => {
           slide={true}
           indicators={true}
           slideInterval={2000}
-          onSlideChange={(index) => console.log('Slide changed to:', index)}
+          onSlideChange={(index) => console.log("Slide changed to:", index)}
         >
           <div className="relative h-full">
             <img
@@ -82,12 +90,16 @@ const Hero = () => {
             />
           </div>
         </Carousel>
-        <CustomControls Slide={(direction) => {
-          const button = document.querySelector(direction === 'next' ? 
-            '[data-testid="carousel-right-control"]' : 
-            '[data-testid="carousel-left-control"]');
-          button?.click();
-        }} />
+        <CustomControls
+          Slide={(direction) => {
+            const button = document.querySelector(
+              direction === "next"
+                ? '[data-testid="carousel-right-control"]'
+                : '[data-testid="carousel-left-control"]'
+            );
+            button?.click();
+          }}
+        />
       </div>
     </div>
   );

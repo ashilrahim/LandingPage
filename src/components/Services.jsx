@@ -88,7 +88,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="overflow-hidden bg-white rounded shadow transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg group"
+                className="overflow-hidden bg-white rounded-xl shadow transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg group"
               >
                 <div className="p-8 text-center">
                   <div className="flex justify-center mb-4">

@@ -1,11 +1,11 @@
-import { TreesIcon , Hammer, Leaf, ClipboardList } from "lucide-react";
-import { BsBuildings,  } from "react-icons/bs";
+import { TreesIcon, Hammer, Leaf, ClipboardList } from "lucide-react";
+import { BsBuildings } from "react-icons/bs";
 import sofaIcon from "../assets/images/sofaicon.png";
-import architecture from "../assets/images/architectureicons.png"
-import landscape from "../assets/images/park.png"
-import remodel from "../assets/images/remodeling.png"
-import sustainable from "../assets/images/implementation.png"
-import management from "../assets/images/project-management.png"
+import architecture from "../assets/images/architectureicons.png";
+import landscape from "../assets/images/park.png";
+import remodel from "../assets/images/remodeling.png";
+import sustainable from "../assets/images/implementation.png";
+import management from "../assets/images/project-management.png";
 const Services = () => {
   const serviceItems = [
     {
@@ -70,11 +70,13 @@ const Services = () => {
   return (
     <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+        <div className="max-w-2xl  text-start">
+          <h2 className="text-xl font-medium tracking-wider mb-4 flex items-center justify-start ">
             Our Services
+            <span className="block w-8 h-px bg-black ml-2 relative top-1"></span>
           </h2>
-          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 font-mono">
+
+          <p className="max-w-2xl mx-auto mt-6 text-lg leading-loose text-gray-700 font-serif ml-4">
             We offer comprehensive architectural and interior design solutions
             to create beautiful and functional spaces that reflect your style
             and needs.
@@ -90,7 +92,7 @@ const Services = () => {
               >
                 <div className="p-8 text-center">
                   <div className="flex justify-center mb-4">
-                  {renderIcons(service.icon)}
+                    {renderIcons(service.icon)}
                   </div>
                   <h3 className="text-xl font-semibold text-black group-hover:text-[#f3bc77] transition-colors duration-300">
                     {service.title}

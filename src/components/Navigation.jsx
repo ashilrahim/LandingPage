@@ -12,8 +12,8 @@ function Navigation() {
     };
   
     return (
-      <nav className="bg-[#FAF9F6] p-4 relative">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-5">
+      <nav className="bg-[#FAF9F6] p-2 relative">
+        <div className="max-w-[83rem] mx-auto flex items-center justify-between px-5">
           {/* Logo or brand */}
           <div className="text-[#444444] text-xl font-bold">
             <a href="#">
@@ -45,7 +45,7 @@ function Navigation() {
           </div>
   
           {/* Desktop nav links */}
-          <div className="hidden lg:flex space-x-4">
+          <div className="hidden lg:flex space-x-2">
             <ul className="flex space-x-4 items-center">
               <li>
                 <a href="#"  className="inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out">

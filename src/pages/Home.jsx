@@ -1,21 +1,23 @@
-import About from "../components/About";
-import Contact from "../components/Contacts";
-import Hero from "../components/Hero";
-import Navigation from "../components/Navigation";
-import Projects from "../components/Projects";
-import Services from "../components/Services";
+import { 
+  AnimatedNavigation,
+  AnimatedHero,
+  AnimatedAbout,
+  AnimatedServices,
+  AnimatedProjects,
+  AnimatedContact
+} from '../lib/animations/AnimatedComponents';
 
 function Home() {
   return (
     <div className="">
-      <Navigation />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Contact />
+      <AnimatedNavigation />
+      <AnimatedHero />
+      <AnimatedAbout />
+      <AnimatedServices />
+      <AnimatedProjects />
+      <AnimatedContact />
     </div>
   );
 }
 
-export default Home;
+export default Home

@@ -1,5 +1,4 @@
-import { TreesIcon, Hammer, Leaf, ClipboardList } from "lucide-react";
-import { BsBuildings } from "react-icons/bs";
+
 import sofaIcon from "../assets/images/sofaicon.png";
 import architecture from "../assets/images/architectureicons.png";
 import landscape from "../assets/images/park.png";
@@ -47,14 +46,7 @@ const Services = () => {
   ];
 
   const renderIcons = (Icons) => {
-    if (typeof Icons === "function") {
-      return (
-        <Icons
-          className="text-[#f3bc77] group-hover:text#f3bc77 transition-colors duration-300"
-          size={48}
-        />
-      );
-    }
+   
     if (typeof Icons === "string") {
       return (
         <img
@@ -68,7 +60,7 @@ const Services = () => {
   };
 
   return (
-    <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+    <section className="py-10 bg-gray-50 sm:py-16 lg:py-24" id="services">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl  text-start">
           <h2 className="text-xl font-medium tracking-wider mb-4 flex items-center justify-start ">

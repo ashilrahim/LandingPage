@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 
 import rectangle from "../assets/images/Rectangle 3.jpg";
 import rectangle2 from "../assets/images/Rectangle 4.jpg";
@@ -8,8 +8,6 @@ import rectangle5 from "../assets/images/Rectangle 5.jpg";
 
 import AnimatedNumber from "./AnimatedNumber/AnimatedNumber";
 import ImageZoomModal from "./ImageModel/ImageZoomModal";
-
-
 
 const About = () => {
   const stats = [
@@ -69,7 +67,7 @@ const About = () => {
             </p>
 
             {/* Animated Statistics */}
-            <div className="grid grid-cols-3 gap-4 py-8 border-t border-b border-gray-200 text-center">
+            <div className={`grid grid-cols-${stats.length} gap-4 py-8 border-t border-b border-gray-200 text-center`}>
               {stats.map((stat, index) => (
                 <AnimatedNumber
                   key={index}

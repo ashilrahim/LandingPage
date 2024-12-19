@@ -1,12 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import Logo from "../assets/images/Logo.png";
 import { GoArrowRight } from "react-icons/go";
-import { Link } from "react-scroll";
+
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const [isHome, setIsHome] = useState(location.pathname === "/");
+
+  useEffect(() => {
+    setIsHome(location.pathname === "/");
+  }, [location]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  // NavLink component that conditionally renders ScrollLink or RouterLink
+  const NavLink = ({ to, children, className }) => {
+    if (isHome) {
+      return (
+        <ScrollLink
+          to={to}
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className={className}
+        >
+          {children}
+        </ScrollLink>
+      );
+    }
+    return (
+      <RouterLink
+        to={`/${to === "Hero" ? "" : to}`}
+        className={className}
+      >
+        {children}
+      </RouterLink>
+    );
   };
 
   return (
@@ -14,9 +48,9 @@ function Navigation() {
       <div className="max-w-[83rem] mx-auto flex items-center justify-between px-5">
         {/* Logo or brand */}
         <div className="text-[#444444] text-xl font-bold cursor-pointer">
-          <Link to="Hero" spy={true} smooth={true} offset={50} duration={500}>
+          <RouterLink to="/">
             <img src={Logo} alt="Logo" />
-          </Link>
+          </RouterLink>
         </div>
 
         {/* Hamburger icon for mobile */}
@@ -46,66 +80,46 @@ function Navigation() {
         <div className="hidden lg:flex space-x-2">
           <ul className="flex space-x-4 items-center">
             <li>
-              <Link
+              <NavLink
                 to="Hero"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
                 className="cursor-pointer inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="services"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
                 className="cursor-pointer inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
               >
                 Services
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="works"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
                 className="cursor-pointer inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
               >
                 Our Works
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="about"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
                 className="cursor-pointer inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
               >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="contact"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
               >
                 <button className="cursor-pointer group px-5 py-3 bg-[#996830] flex items-center gap-1 hover:text-[#dddddd] text-[#ffffff]">
                   CONTACT US
                   <GoArrowRight className="hover: transition-transform duration-500 ease-in-out group-hover:rotate-45" />
                 </button>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -119,66 +133,46 @@ function Navigation() {
       >
         <ul className="flex flex-col items-center bg-[#FAF9F6] space-y-4 py-4">
           <li>
-            <Link
+            <NavLink
               to="Hero"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
               className="inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="services"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
               className="inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
             >
               Services
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="works"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
               className="inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
             >
               Our Works
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="about"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
               className="inline-block text-[#333333] hover:text-[#777777] transform hover:scale-110 transition-transform duration-300 ease-in-out"
             >
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="contact"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
             >
               <button className="group px-5 py-3 bg-[#996830] flex items-center gap-1 hover:text-[#dddddd] text-[#ffffff]">
                 CONTACT US
                 <GoArrowRight className="hover: transition-transform duration-500 ease-in-out group-hover:rotate-45" />
               </button>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -3,7 +3,6 @@ import HeroImage from "../assets/images/hero-image.jpg";
 import HeroImage1 from "../assets/images/Herosection2.jpg";
 import HeroImage2 from "../assets/images/Herosection1.jpg";
 import { GoArrowRight } from "react-icons/go";
-import { Link } from "react-scroll";
 
 const Hero = () => {
   const scrollToContact = () => {

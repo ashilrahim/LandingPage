@@ -1,21 +1,21 @@
 import { 
-  AnimatedNavigation,
   AnimatedHero,
   AnimatedAbout,
   AnimatedServices,
   AnimatedProjects,
-  AnimatedContact
+  AnimatedContact,
+  AnimatedFooter
 } from '../lib/animations/AnimatedComponents';
 
 function Home() {
   return (
-    <div className="">
-      <AnimatedNavigation />
+    <div className="space-y-16">
       <AnimatedHero />
       <AnimatedAbout />
       <AnimatedServices />
       <AnimatedProjects />
       <AnimatedContact />
+      <AnimatedFooter />
     </div>
   );
 }
